@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="MyApp">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="scripts/angular.js" type="text/javascript"></script>
+        <script src="scripts/AppModule.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div ng-controller="dataRepeaterController">
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Salary</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees">
+                        <td>{{employee.firstName}}</td>
+                        <td>{{employee.lastName}}</td>
+                        <td>{{employee.gender}}</td>
+                        <td>{{employee.salary}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <br />
+        <div ng-controller="countryController">
+            <ul ng-repeat="country in countries">
+                <li>{{country.name}}</li>
+                <ul ng-repeat="city in country.cities">
+                    <li>{{city.name}}</li>
+                </ul>
+            </ul>
+            
+        </div>
+    </body>
+</html>
